@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./dist",
@@ -11,7 +10,14 @@
     "strict": true,
     "skipLibCheck": true,
     "rootDir": "./src",
-    "types": []
+    "types": [],
+    "lib": ["ES2020", "DOM"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": false
   },
   "include": ["src"]
 }

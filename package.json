@@ -24,7 +24,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "prepublishOnly": "npm run clean && npm run build && npm run test",
+    "validate:handlers": "node scripts/validate-handlers-export.cjs",
+    "prepublishOnly": "npm run clean && npm run build && npm run test && npm run validate:handlers",
     "pack:verify": "npm pack && tar -tzf *.tgz"
   },
   "peerDependencies": {
