@@ -8,7 +8,7 @@ export default defineConfig({
   sourcemap: true,
   clean: true,
   target: 'es2020',
-  treeshake: true,
+  treeshake: false, // Disable tree-shaking to preserve handlers export
   external: [
     '@renderx-plugins/host-sdk',
     'react',

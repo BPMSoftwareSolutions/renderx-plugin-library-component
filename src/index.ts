@@ -5,6 +5,14 @@ import { handlers as dragHandlers } from './symphonies/drag.symphony';
 import { handlers as dropHandlers } from './symphonies/drop.symphony';
 import { handlers as containerDropHandlers } from './symphonies/drop.container.symphony';
 
+// Export merged handlers for JSON-mounted sequences
+const mergedHandlers = {
+  onDragStart: dragHandlers.onDragStart,
+  publishCreateRequested: dropHandlers.publishCreateRequested,
+};
+
+export { mergedHandlers as handlers };
+
 export async function register(conductor: any) {
   if (!conductor?.mount) return;
 
