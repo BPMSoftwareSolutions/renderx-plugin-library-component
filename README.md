@@ -7,8 +7,9 @@ Runtime package that registers the Library Component drag/drop sequences for Ren
 - Sequences: `drag`, `drop`, `container-drop`
 - Types: bundled `.d.ts` (tsup dts)
 - Peer dependency: `@renderx-plugins/host-sdk`
+- **NEW**: Ships with bundled json-sequences and advertises them via `renderx.sequences` metadata
 
-> Note: This is a pre-release (0.1.0-rc.0). API surface is stable for current host usage, but may have minor breaking changes prior to 1.0.
+> Note: This is a pre-release (0.1.0-rc.1). API surface is stable for current host usage, but may have minor breaking changes prior to 1.0.
 
 ## Install
 
@@ -33,6 +34,21 @@ registerLibraryComponent(conductor);
 This call registers the library-component sequences so your app can:
 - start a drag with a preview ghost (no setDragImage fallbacks included)
 - drop components onto the canvas (root or container drops)
+
+## Auto-Discovery
+
+As of v0.1.0-rc.1, this package includes its own json-sequences and advertises them via `package.json` metadata:
+
+```json
+{
+  "renderx": {
+    "sequences": ["json-sequences"]
+  },
+  "files": ["dist", "src", "json-sequences"]
+}
+```
+
+The host can now auto-discover and load sequences from this package without needing them to be copied to the host repository.
 
 ## Events
 

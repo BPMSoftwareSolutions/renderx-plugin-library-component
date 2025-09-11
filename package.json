@@ -1,6 +1,6 @@
 {
   "name": "@renderx-plugins/library-component",
-  "version": "0.1.0-rc.0",
+  "version": "0.1.0-rc.1",
   "private": false,
   "description": "Runtime for Library-Component drag/drop sequences (externalized).",
   "type": "module",
@@ -12,7 +12,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "json-sequences"
   ],
   "sideEffects": false,
   "scripts": {
@@ -23,6 +24,19 @@
   },
   "peerDependencies": {
     "@renderx-plugins/host-sdk": "^0.3.0"
+  },
+  "devDependencies": {
+    "@renderx-plugins/host-sdk": "^0.3.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
+    "eslint": "^8.57.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^2.0.0"
+  },
+  "renderx": {
+    "sequences": ["json-sequences"]
   },
   "publishConfig": {
     "access": "public"

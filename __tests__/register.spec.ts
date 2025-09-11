@@ -1,5 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { register } from '../src/index';
+import pkg from '../package.json';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 function createFakeConductor() {
   const mounted: any[] = [];
@@ -31,5 +34,29 @@ describe('renderx-plugin-library-component: register()', () => {
     expect(pluginIds).toContain('LibraryComponentPlugin');
     expect(pluginIds).toContain('LibraryComponentDropPlugin');
   }, 30000);
+
+  it('exposes json-sequences via renderx.sequences metadata', () => {
+    expect(pkg.renderx?.sequences).toContain('json-sequences');
+    expect(pkg.files).toContain('json-sequences');
+  });
+
+  it('json-sequences catalog is loadable and contains expected sequences', () => {
+    const indexPath = join(process.cwd(), 'json-sequences', 'library-component', 'index.json');
+    const indexContent = readFileSync(indexPath, 'utf-8');
+    const catalog = JSON.parse(indexContent);
+
+    expect(catalog.version).toBe('1.0.0');
+    expect(catalog.sequences).toHaveLength(3);
+
+    const sequenceFiles = catalog.sequences.map((s: any) => s.file);
+    expect(sequenceFiles).toContain('drag.json');
+    expect(sequenceFiles).toContain('drop.json');
+    expect(sequenceFiles).toContain('container.drop.json');
+
+    // Verify all handlersPath point to the bare package specifier
+    catalog.sequences.forEach((seq: any) => {
+      expect(seq.handlersPath).toBe('@renderx-plugins/library-component');
+    });
+  });
 });
 
