@@ -25,7 +25,7 @@ export async function register(conductor: any) {
         id: 'drag',
         name: 'Drag',
         beats: [
-          { beat: 1, event: 'library:component:drag:start', handler: 'onDragStart', kind: 'pure', dynamics: 'mf', timing: 'immediate' },
+          { beat: 1, event: 'library.component.drag.start.requested', handler: 'onDragStart', kind: 'pure', dynamics: 'mf', timing: 'immediate' },
         ],
       },
     ],
