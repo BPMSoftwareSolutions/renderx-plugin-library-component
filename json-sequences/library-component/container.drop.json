@@ -1,5 +1,5 @@
 {
-  "pluginId": "LibraryComponentDropPlugin",
+  "pluginId": "LibraryComponentPlugin",
   "id": "library-component-container-drop-symphony",
   "name": "Library Component Container Drop",
   "movements": [

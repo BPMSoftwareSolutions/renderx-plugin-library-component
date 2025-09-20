@@ -32,7 +32,7 @@ describe('renderx-plugin-library-component: register()', () => {
 
     const pluginIds = c.getMountedPluginIds();
     expect(pluginIds).toContain('LibraryComponentPlugin');
-    expect(pluginIds).toContain('LibraryComponentDropPlugin');
+    expect(pluginIds).toContain('LibraryComponentPlugin');
   }, 30000);
 
   it('exposes json-sequences via renderx.sequences metadata', () => {

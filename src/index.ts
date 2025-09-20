@@ -32,7 +32,7 @@ export async function register(conductor: any) {
   } as any;
 
   const dropSeq = {
-    pluginId: 'LibraryComponentDropPlugin',
+    pluginId: 'LibraryComponentPlugin',
     id: 'library-component-drop-symphony',
     name: 'Library Component Drop',
     movements: [
@@ -47,7 +47,7 @@ export async function register(conductor: any) {
   } as any;
 
   const containerDropSeq = {
-    pluginId: 'LibraryComponentDropPlugin',
+    pluginId: 'LibraryComponentPlugin',
     id: 'library-component-container-drop-symphony',
     name: 'Library Component Container Drop',
     movements: [
