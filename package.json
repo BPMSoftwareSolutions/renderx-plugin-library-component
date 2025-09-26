@@ -1,6 +1,6 @@
 {
   "name": "@renderx-plugins/library-component",
-  "version": "0.1.0-rc.5",
+  "version": "0.1.0-rc.6",
   "private": false,
   "description": "Runtime for Library-Component drag/drop sequences (externalized).",
   "type": "module",
@@ -16,7 +16,12 @@
     "json-sequences"
   ],
   "sideEffects": false,
-  "keywords": ["renderx-plugin", "renderx", "plugin", "library"],
+  "keywords": [
+    "renderx-plugin",
+    "renderx",
+    "plugin",
+    "library"
+  ],
   "scripts": {
     "build": "tsup --config tsup.config.ts",
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
@@ -30,10 +35,10 @@
     "pack:verify": "npm pack && tar -tzf *.tgz"
   },
   "peerDependencies": {
-    "@renderx-plugins/host-sdk": "^0.3.0"
+    "@renderx-plugins/host-sdk": "^1.0.4-rc.0"
   },
   "devDependencies": {
-    "@renderx-plugins/host-sdk": "^0.3.0",
+    "@renderx-plugins/host-sdk": "^1.0.4-rc.0",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
@@ -46,10 +51,15 @@
     "plugins": [
       {
         "id": "LibraryComponentPlugin",
-        "runtime": { "module": "@renderx-plugins/library-component", "export": "register" }
+        "runtime": {
+          "module": "@renderx-plugins/library-component",
+          "export": "register"
+        }
       }
     ],
-    "sequences": ["json-sequences"]
+    "sequences": [
+      "json-sequences"
+    ]
   },
   "publishConfig": {
     "access": "public"
