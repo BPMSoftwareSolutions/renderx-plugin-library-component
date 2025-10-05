@@ -27,6 +27,7 @@
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
     "lint": "eslint src __tests__",
     "lint:fix": "eslint src __tests__ --fix",
+    "pretest": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
