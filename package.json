@@ -38,7 +38,7 @@
     "@renderx-plugins/host-sdk": "^1.0.4-rc.0"
   },
   "devDependencies": {
-    "@renderx-plugins/host-sdk": "^1.0.4-rc.0",
+    "@renderx-plugins/host-sdk": "^1.0.5",
     "@types/node": "^20.0.0",
     "@typescript-eslint/eslint-plugin": "^8.43.0",
     "@typescript-eslint/parser": "^8.43.0",
