@@ -1,6 +1,6 @@
 {
   "name": "@renderx-plugins/library-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "description": "Runtime for Library-Component drag/drop sequences (externalized).",
   "type": "module",
